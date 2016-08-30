@@ -13,6 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+  
+//Modifications Copyright (c) 2016 Calliope GbR
+//Modifications are provided by DELTA Systems (Georg Sommer) - Thomas Kern
+//und Björn Eberhardt GbR by arrangement with Calliope GbR. 
+
+ 
 #ifndef MBED_PINNAMES_H
 #define MBED_PINNAMES_H
 
@@ -29,6 +35,7 @@ typedef enum {
 
 #define PORT_SHIFT  3
 
+//changed!
 typedef enum {
     p0  = 0,
     p1  = 1,
@@ -102,7 +109,7 @@ typedef enum {
     PAD3 = p1,
     PAD2 = p2,
     PAD1 = p3,
-    
+    PAD0 = p0, //ADDED
 
     //LED MATRIX COLS
     COL1 = p4,
@@ -137,27 +144,27 @@ typedef enum {
     //PIN_20
 
     //MASTER OUT SLAVE IN
-    MOSI = p21,
+    MOSI = 31, //p21, CHANGED -> unused on Calliope Mini board
     
     //MASTER IN SLAVE OUT
-    MISO = p22,
+    MISO = 31, //p22, CHANGED -> unused on Calliope Mini board
 
     //SERIAL CLOCK
-    SCK = p23,
+    SCK = 31, //p23, CHANGED -> unused on Calliope Mini board
 
     // RX AND TX PINS
-    TGT_TX = p24,
-    TGT_RX = p25,
+    TGT_TX = p21,
+    TGT_RX = p16,
 
     //BUTTON B
     BUTTON_B = p26,
     
     //ACCEL INTERRUPT PINS (MMA8653FC)
     ACCEL_INT2 = p27,
-    ACCEL_INT1 = p28,
+    ACCEL_INT1 = p27,
 
     //MAGENETOMETER INTERRUPT PIN (MAG3110)
-    MAG_INT1 = p29,
+    MAG_INT1 = p27,
 
     // Not connected
     NC = (int)0xFFFFFFFF,
@@ -174,13 +181,13 @@ typedef enum {
     LED1    = PAD1,
     LED2    = PAD2,
     LED3    = PAD3,
-    LED4    = P0_16,
+    LED4    = PAD0, //P0_16, -> CHANGED
 
     //SDA (SERIAL DATA LINE)
-    I2C_SDA0 = p30,
+    I2C_SDA0 = p20,
 
     //SCL (SERIAL CLOCK LINE)
-    I2C_SCL0 = p0
+    I2C_SCL0 = p19
 
 } PinName;
 
